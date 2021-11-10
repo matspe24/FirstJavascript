@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Website</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>>Hello! Welcome to my first website.</h1>
+    <img src="bcaLogo.png">
+    <p><strong>>Here I'll show and talk about some of the things I'm passionate about.</strong></p>
+    <ul>
+        <li><a href="https://matspe24.github.io/FirstJavascript/inSchool">In-School Activities</a></li>
+        <li><a href="https://matspe24.github.io/FirstJavascript/extracurricular">Extracurricular</a></li>
+        <li><a href="https://bca-admissions.bergen.org/">Link to BCA Website</a></li>
+    </ul>
+
+    <p>Add suggestions for new pages!</p>
+    <input type="text"><button>Add</button>
+    <ul>
+    </ul>
+    <script>
+        function addToList(content){
+            let itemElm = document.createElement("li");
+            itemElm.textContent = content;
+            let listElm = document.querySelector("ul");
+            listElm.appendChild(itemElm);
+        }
+
+        function getUserInput(){
+            let inputElm = document.querySelector("input");
+            if (inputElm.value !== "") {
+                addToList(inputElm.value + " (Work in Progress)"); 
+            }
+            else {
+                alert("You can’t add a blank suggestion");
+            }
+            inputElm.value = "";
+        }
+
+        let buttonElm = document.querySelector("button");
+        buttonElm.addEventListener("click", getUserInput);
+
+    </script>
+
+</body>
+</html>
